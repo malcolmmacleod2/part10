@@ -1,10 +1,17 @@
 import React from 'react';
-import { FlatList, View, StyleSheet, Text } from 'react-native';
+import { FlatList, View, StyleSheet } from 'react-native';
 import RepositoryItem from './RepositoryItem';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
   separator: {
     height: 10,
+    backgroundColor: theme.colors.textSecondary
+  },
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 24,
   },
 });
 
@@ -63,12 +70,15 @@ const RepositoryList = () => {
   );
 
   return (
-    <FlatList
-      data={repositories}
-      ItemSeparatorComponent={ItemSeparator}
-      renderItem={renderItem}
-      keyExtractor={item => item.id}
-    />
+    <View style={styles.container}>
+      <FlatList
+        data={repositories}
+        ItemSeparatorComponent={ItemSeparator}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+      />      
+    </View>
+    
   );
 };
 

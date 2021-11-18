@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
       color: theme.colors.headingColor,
       fontSize: 24,
       fontWeight: 'bold'
+  }, 
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold'
   }
 });
 
