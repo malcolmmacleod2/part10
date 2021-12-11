@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text, Pressable } from 'react-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
+import { Link } from 'react-router-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,7 +24,29 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
-  return <View style={styles.container}><Pressable><Text style={styles.text}>Repositories</Text></Pressable></View>;
+  return (
+    <View>
+      <View style={styles.container}>
+        
+          <Pressable>
+            <Link to="/signin">
+              <Text style={styles.text}>Sign In </Text>
+            </Link>
+            
+          </Pressable>      
+      </View>
+      <View style={styles.container}>
+        
+          <Pressable>
+            <Link to="/repositories">
+              <Text style={styles.text}>Repositories</Text>
+            </Link>
+            
+          </Pressable>
+      </View>
+    </View>
+  )
+  ;
 };
 
 export default AppBar;
