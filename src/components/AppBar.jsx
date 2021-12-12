@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, Pressable } from 'react-native';
+import { View, StyleSheet, Text, Pressable, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
 import { Link } from 'react-router-native';
@@ -27,22 +27,19 @@ const AppBar = () => {
   return (
     <View>
       <View style={styles.container}>
-        
+        <ScrollView horizontal>
           <Pressable>
             <Link to="/signin">
               <Text style={styles.text}>Sign In </Text>
-            </Link>
-            
+            </Link>     
           </Pressable>      
-      </View>
-      <View style={styles.container}>
-        
+
           <Pressable>
             <Link to="/repositories">
               <Text style={styles.text}>Repositories</Text>
-            </Link>
-            
+            </Link>       
           </Pressable>
+        </ScrollView> 
       </View>
     </View>
   )
