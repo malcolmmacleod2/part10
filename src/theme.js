@@ -18,6 +18,10 @@ const theme = {
     normal: '400',
     bold: '700',
   },
+  error: {
+    color: '#d73a4a',
+    borderColor: '#d73a4a',
+  },
 };
 
 export default theme;
