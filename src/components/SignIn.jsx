@@ -5,6 +5,7 @@ import { View, Button, StyleSheet } from 'react-native';
 import FormikTextInput from './FormikTextInput';
 import * as yup from 'yup';
 import useSignIn from '../hooks/useSignIn';
+import { useHistory } from 'react-router-native';
 
 const initialValues = {
   username: '',
@@ -28,7 +29,6 @@ const styles = StyleSheet.create({
 
 const SignInForm = ({ onSubmit }) => {
 
-
   return (
     <View>
       <FormikTextInput
@@ -47,7 +47,8 @@ const SignInForm = ({ onSubmit }) => {
 
 function SignIn() {
 
- const [signIn] = useSignIn();
+  const [signIn] = useSignIn();
+  const history = useHistory();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
@@ -56,6 +57,7 @@ function SignIn() {
     try {
       const {data} = await signIn({username, password});
       console.log(data);
+      history.push("/repositories");
     } catch (e) {
       console.log(e);
     }
