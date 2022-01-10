@@ -7,7 +7,7 @@ import useRepositories from '../hooks/useRepositories';
 const styles = StyleSheet.create({
   separator: {
     height: 10,
-    backgroundColor: theme.colors.textSecondary
+    backgroundColor: theme.colors.textSecondary,
   },
   container: {
     alignItems: 'center',
@@ -18,12 +18,10 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryList = () => {
-  const { repositories } = useRepositories();
-
+const RepositoryListContainer = ({ repositories }) => {
   // Get the nodes from the edges array
   const repositoryNodes = repositories
-    ? repositories.edges.map(edge => edge.node)
+    ? repositories.edges.map((edge) => edge.node)
     : [];
 
   const renderItem = ({ item }) => (
@@ -36,11 +34,17 @@ const RepositoryList = () => {
         data={repositoryNodes}
         ItemSeparatorComponent={ItemSeparator}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />      
+        keyExtractor={(item) => item.id}
+      />
     </View>
-    
   );
 };
 
+const RepositoryList = () => {
+  const { repositories } = useRepositories();
+
+  return <RepositoryListContainer repositories={repositories} />;
+};
+
 export default RepositoryList;
+export { RepositoryListContainer };
