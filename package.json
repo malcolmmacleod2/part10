@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
+    "@react-native-async-storage/async-storage": "~1.15.0",
     "dotenv": "^10.0.0",
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
@@ -21,8 +22,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
     "react-native-web": "~0.13.12",
     "react-router-native": "^5.2.1",
-    "yup": "^0.32.11",
-    "@react-native-async-storage/async-storage": "~1.15.0"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -45,7 +45,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*|react-router-native)"
     ],
-     "setupFilesAfterEnv": ["<rootDir>/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ]
   },
   "private": true
 }
