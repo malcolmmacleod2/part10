@@ -79,6 +79,14 @@ const AppBar = () => {
             </Pressable>
           )}
 
+          {!authorizedUser && (
+            <Pressable>
+              <Link to="/signup">
+                <Text style={styles.text}>Sign Up</Text>
+              </Link>
+            </Pressable>
+          )}
+
           <Pressable>
             <Link to="/repositories">
               <Text style={styles.text}>Repositories</Text>
