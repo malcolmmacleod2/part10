@@ -11,6 +11,7 @@ import {
 } from 'react-router-native';
 import SignIn from './SignIn';
 import SingleRepository from './SingleRepository';
+import CreateReview from './CreateReview';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,6 +34,9 @@ const Main = () => {
         </Route>
         <Route path="/repositories" exact>
           <RepositoryList></RepositoryList>
+        </Route>
+        <Route path="/createreview" exact>
+          <CreateReview></CreateReview>
         </Route>
         <Route path="/signin" exact>
           <SignIn></SignIn>

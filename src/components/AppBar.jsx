@@ -66,8 +66,16 @@ const AppBar = () => {
           )}
 
           {authorizedUser && (
-            <Pressable onPress={(e) => signOut()}>
+            <Pressable onPress={() => signOut()}>
               <Text style={styles.text}>Sign Out </Text>
+            </Pressable>
+          )}
+
+          {authorizedUser && (
+            <Pressable>
+              <Link to="/createreview">
+                <Text style={styles.text}>Create a Review </Text>
+              </Link>
             </Pressable>
           )}
 
